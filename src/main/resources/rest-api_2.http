@@ -1,0 +1,26 @@
+GET http://localhost:8080/api/user
+Accept: application/json
+
+### Create a User
+
+POST http://localhost:8080/api/user
+Content-Type: application/x-www-form-urlencoded
+
+email=someemail@someemailprovider.com&name=content
+
+### Missing required name
+
+POST http://localhost:8080/api/user
+Content-Type: application/x-www-form-urlencoded
+
+email=tomjerry@email.com
+// trigger spring-generated error response
+
+
+### Missing nullable email
+
+POST http://localhost:8080/api/user
+Content-Type: application/x-www-form-urlencoded
+
+name=content
+// trigger user-generated error response
